@@ -11,11 +11,18 @@ export interface User {
     username: string;
 }
 
+export interface Comment {
+    postId: number;
+    id: number;
+    body: string;
+}
+
 export type PostsState = {
     posts: Post[],
     users: User[],
     isLoading: boolean,
-    currentPost: Post | undefined
+    currentPost: Post | undefined,
+    comments: Comment[]
 }
 
 export type PostAction = {
@@ -30,6 +37,7 @@ export type PostAction = {
 export const initialPostsState: PostsState = {
     posts: [],
     users: [],
+    comments: [],
     isLoading: false,
     currentPost: undefined
 }

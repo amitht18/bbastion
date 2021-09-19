@@ -15,7 +15,7 @@ function PostComponent(props: Props) {
 
     return (
         <Card className="post" key={props.post.id}>
-            <Card.Img variant="top" src="https://via.placeholder.com/600/8e973b" />
+            <Card.Img variant="top" src="https://picsum.photos/200/300" />
             <Card.Body>
                 <Card.Title>
                     {props.post.title}

@@ -1,15 +1,27 @@
-import { Post } from "../post.types";
+import { ListGroup, Card } from "react-bootstrap";
+import { Post, Comment } from "../post.types";
 
-function PostDetail(post: Post) {
+interface Props {
+    post: Post;
+    comment: Comment
+}
+
+function PostDetail(props: Props) {
     return (
-        <div className="media blog-media">
-            <img className="d-flex img-thumbnail col-md-6" src="https://via.placeholder.com/600/8e973b" alt="Generic placeholder" />
-            <div className="media-body">
-                <h5 className="mt-0">{post.title}</h5>
-                <p>{post.body}</p>
-                <footer className="blockquote-footer">{post.userId}</footer>
-            </div>
-        </div>
+        <Card>
+            <Card.Header>
+                <h5 className="mt-0">{props.post.title}</h5>
+            </Card.Header>
+            <Card.Body>
+                <div>Description</div>
+                <Card.Text><p>{props.post.body}</p></Card.Text>
+                <hr />
+                <div>Comments</div>
+                <ListGroup className="list-group-flush">
+                    <ListGroup.Item className="figure-caption font-italic">{props.comment.body}</ListGroup.Item>
+                </ListGroup>
+            </Card.Body>
+        </Card>
     )
 }
 
