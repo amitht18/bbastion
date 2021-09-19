@@ -9,12 +9,11 @@ interface Props {
 function PostDetail(props: Props) {
     return (
         <Card>
-            <Card.Header>
-                <h5 className="mt-0">{props.post.title}</h5>
+            <Card.Header className="font-bold"><strong>{props.post.title}</strong>
             </Card.Header>
             <Card.Body>
-                <div>Description</div>
-                <Card.Text><p>{props.post.body}</p></Card.Text>
+                <div><u>Description</u></div>
+                <Card.Text>{props.post.body}</Card.Text>
                 <hr />
                 <div>Comments</div>
                 <ListGroup className="list-group-flush">
