@@ -23,6 +23,8 @@ function PostsList() {
             let user = users?.find((user) => user.id === post.userId);
             if (user && user.username.toLowerCase().indexOf(e.target.value.toLowerCase()) > -1) {
                 return post;
+            } else {
+                return undefined;
             }
         })
         if (filteredList) {
@@ -47,6 +49,8 @@ function PostsList() {
                             let user = users?.find((user) => user.id === item.userId)
                             if (user) {
                                 return <PostComponent post={item} user={user} />
+                            } else {
+                                return <> </>;
                             }
                         })
                     }
